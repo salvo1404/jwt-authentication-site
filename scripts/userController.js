@@ -19,7 +19,7 @@
 
             // This request will hit the index method in the AuthenticateController
             // on the Laravel side and will return the list of users
-            $http.get('http://jwt-auth.app/api/users', {
+            $http.get('http://staging-jwt-authentication.sbvita.tk/api/users', {
                 headers: {'Authorization': 'Bearer '.concat(localStorage.token)}
             }).success(function(data, status, headers, config) {
                 localStorage.setItem('token', headers('Authorization'));

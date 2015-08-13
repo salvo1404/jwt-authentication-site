@@ -21,7 +21,7 @@
                 password: vm.password
             }
 
-            $http.post('http://jwt-auth.app/api/auth/login', credentials)
+            $http.post('http://staging-jwt-authentication.sbvita.tk/api/auth/login', credentials)
                 .then(function(response) {
                     localStorage.setItem('token', response.data.data.token);
                     $state.go('users', {});

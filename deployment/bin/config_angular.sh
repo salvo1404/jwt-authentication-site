@@ -7,5 +7,6 @@ npm install angular angular-ui-router bootstrap
 
 # setup
 chown -R www-data: node_modules
+chmod -R 775 node_modules
 
 # take application out of maintenance mode

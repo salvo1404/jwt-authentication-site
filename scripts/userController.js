@@ -24,7 +24,7 @@
             }).success(function(data, status, headers, config) {
                 localStorage.setItem('token', headers('Authorization'));
                 vm.users = data;
-            }).error(function(data, status, headers, config) {
+            }).error(function(data, status, config) {
                 vm.error = data;
             });
         }

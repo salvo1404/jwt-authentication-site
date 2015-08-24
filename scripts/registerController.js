@@ -23,7 +23,7 @@
                 password: vm.password
             };
 
-            $http.post('http://jwt-auth.app/api/users', data)
+            $http.post('http://jwt-authentication.sbvita.tk/api/users', data)
                 .then(function(response) {
                     localStorage.setItem('token', response.data.data.token);
                     $state.go('activate', {'email': data.email, 'first_name': data.first_name});

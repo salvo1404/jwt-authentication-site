@@ -14,7 +14,6 @@
 
         var vm = this;
 
-        vm.user;
         vm.error;
 
         vm.sendCode = function() {
@@ -24,14 +23,11 @@
                 email: $stateParams.email
             };
 
-            $http.post('http://jwt-auth.app/api/auth/activate', body,  {
+            $http.post('http://jwt-authentication.sbvita.tk/api/auth/activate', body,  {
                 headers: {'Authorization': 'Bearer '.concat(localStorage.token)}
-                }).success(function(data, status, headers) {
-                    localStorage.setItem('token', data.data.token);
-                    vm.user = data;
-                    $state.go('users', {});
-                }).error(function(data, status, config) {
-                    vm.error = data;
+                }).then(function(response) {
+                    localStorage.setItem('token', response.headers('Authorization'));
+                    $state.go('auth', {});
                 });
 
         }
